@@ -1,0 +1,73 @@
+#!/bin/bash
+
+######################################################################
+#           Auto Install & Optimize LEMP Stack on CentOS 7, 8        #
+#                                                                    #
+#                Author: Sanvv - HOSTVN Technical                    #
+#                  Website: https://hostvn.vn                        #
+#                                                                    #
+#              Please do not remove copyright. Thank!                #
+#  Please do not copy under any circumstance for commercial reason!  #
+######################################################################
+
+# shellcheck disable=SC2154
+source /var/hostvn/hostvn.conf
+source /var/hostvn/menu/helpers/menu
+source /var/hostvn/menu/helpers/variable_common
+source /var/hostvn/ipaddress
+# shellcheck source=/var/hostvn/menu/lang/*
+source /var/hostvn/menu/lang/"${lang}"
+
+CHOICE=1
+
+printf "%s==================================================%s\n" "${GREEN}" "${NC}"
+printf "%s      %s Scripts - Cong cu quan ly VPS    %s\n" "${GREEN}" "${AUTHOR}" "${NC}"
+printf "%s             %s - Version %s             %s\n" "${GREEN}" "${AUTHOR_WEB}" "${script_version}" "${NC}"
+printf "%s==================================================%s\n" "${GREEN}" "${NC}"
+printf "%sIP VPS: %s%s\n" "${GREEN}" "${IPADDRESS}" "${NC}"
+printf "%sphpMyAdmin: %s%s\n" "${GREEN}" "http://${IPADDRESS}:${admin_port}/phpmyadmin" "${NC}"
+printf "%sCSF GUI: %s%s\n" "${GREEN}" "https://${IPADDRESS}:${csf_port}" "${NC}"
+printf "%s==================================================%s\n" "${GREEN}" "${NC}"
+
+while [ "${CHOICE}" != "0" ]
+do
+    printf "%s1. Quan ly ten mien%s\n" "${GREEN}" "${NC}"
+    printf "%s2. Quan ly SSL%s\n" "${GREEN}" "${NC}"
+    printf "%s3. Quan ly Cache%s\n" "${GREEN}" "${NC}"
+    printf "%s4. Quan ly LEMP (Nginx - MariaDB - PHP - FTP - Log)%s\n" "${GREEN}" "${NC}"
+    printf "%s5. Quan ly CSF Firewall%s\n" "${GREEN}" "${NC}"
+    printf "%s6. Phan quyen Chown/Chmod%s\n" "${GREEN}" "${NC}"
+    printf "%s7. Quan ly WordPress %s\n" "${GREEN}" "${NC}"
+    printf "%s8. Sao luu/Khoi phuc du lieu%s\n" "${GREEN}" "${NC}"
+    printf "%s9. Admin Tool%s\n" "${GREEN}" "${NC}"
+    printf "%s10. Quan ly VPS %s\n" "${GREEN}" "${NC}"
+    printf "%s11. Xem thong tin tai khoan%s\n" "${GREEN}" "${NC}"
+    printf "%s12. Quan ly Cronjob/Auto Backup%s\n" "${GREEN}" "${NC}"
+    printf "%s13. Cong cu%s\n" "${GREEN}" "${NC}"
+    printf "%s14. Cap nhat HOSTVN Scripts %s\n" "${GREEN}" "${NC}"
+    printf "%s==================================================%s\n" "${GREEN}" "${NC}"
+    read -r -p " Nhap vao lua chon cua ban [0 = Thoat] " CHOICE
+    if [ -z "${CHOICE}" ]
+    then
+        CHOICE=1
+        continue
+    fi
+    case ${CHOICE} in
+        1) clear; menu_domain;;
+        2) clear; menu_ssl;;
+        3) clear; menu_cache;;
+        4) clear; menu_lemp;;
+        5) clear; menu_csf;;
+        6) clear; menu_permission;;
+        7) clear; menu_wp;;
+        8) clear; menu_backup ;;
+        9) clear; menu_admin ;;
+        10) clear; menu_vps;;
+        11) clear; menu_account ;;
+        12) clear; menu_cronjob ;;
+        13) clear; menu_tools ;;
+        14) update_script;;
+        0) clear; printf "%s\n" "${GREEN}Bye Bye... Cam on ban da su dung ${AUTHOR} Script${NC}";;
+        *) clear; printf "%s\n" "${GREEN}Lua chon cua ban khong chinh xac. Vui long chon lai.${NC}";;
+    esac
+done
