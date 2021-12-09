@@ -1,4 +1,4 @@
-### >_ Help
+### >_ Hỗ trợ
 ```bash
 root@bibo318:$ bash 403-bypass.sh -h
 ```
