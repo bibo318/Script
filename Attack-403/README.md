@@ -5,7 +5,7 @@ root@bibo318:$ bash 403-bypass.sh -h
 
 ### >_ Sử dụng/Modes
 
-- Scan with specific payloads:
+- Quét với các trọng tải cụ thể:
   * [ `--header` ] Hỗ trợ bỏ qua / tải trọng dựa trên Phương phápHEADER 
     ```bash
     root@bibo318:$ bash 403-bypass.sh -u https://target.com/secret --header
