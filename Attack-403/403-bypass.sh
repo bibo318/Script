@@ -24,9 +24,9 @@ function print(){
 }
 function banner(){
 	echo "💀💀💀💀💀💀💀💀💀"
-	echo -e "💀$green Have a beer🍺💀 $end"
+	echo -e "💀$green vn-bypass403🍺💀 $end"
 	echo "💀💀💀💀💀💀💀💀💀"
-	echo -e "     ${cyan}- @bibo318${end}""
+	echo -e "     ${cyan}- @bibo318${end}"
 }
 function usage(){
         printf "Usage:\n"
