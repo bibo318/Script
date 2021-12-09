@@ -24,7 +24,7 @@ function print(){
 }
 function banner(){
 	echo "💀💀💀💀💀💀💀💀💀"
-	echo -e "💀$green vn-bypass403🍺💀 $end"
+	echo -e "💀$green vn-bypass403💀 $end"
 	echo "💀💀💀💀💀💀💀💀💀"
 	echo -e "     ${cyan}- @bibo318${end}"
 }
