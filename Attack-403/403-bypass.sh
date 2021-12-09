@@ -24,7 +24,7 @@ function print(){
 }
 function banner(){
 	echo "💀💀💀💀💀💀💀💀💀"
-	echo -e "💀$green vn-bypass403💀 $end"
+	echo -e "💀$green VN-ByPass403💀 $end"
 	echo "💀💀💀💀💀💀💀💀💀"
 	echo -e "     ${cyan}- @bibo318${end}"
 }
@@ -49,6 +49,7 @@ function usage(){
 		printf "\t${yellow}YELLOW${end}\t:\t${yellow}3xx Status Code${end}\n">&2
 		printf "\t${red}RED${end}\t:\t${red}4xx Status Code${end}\n">&2
 		printf "\t${ltcyan}BLUE${end}\t:\t${ltcyan}5xx Status Code${end}\n">&2
+		printf "-THANK KIU-\n">&2
 }
 function Header_Bypass(){
 	echo -e ${blue}"----------------------"${end}
@@ -1559,12 +1560,12 @@ function prg(){
 	done
 
 	if [[ -z "${target}" ]];then
-        printf "\n[${red}!${end}] ${yellow}No URL/PATH <scheme://domain.tld/path> given. Make sure you go through the usage/help${end}\n\n"
+        printf "\n[${red}!${end}] ${yellow}Khong co URL/PATH nao <Scheme: //domain.tld/path> duoc nhap. Dam bao ban da xem cach dung${end}\n\n"
         usage
         exit 127
     fi
 	if [[ -z "${mode}" ]];then
-        printf "\n[${red}!${end}] ${yellow}No mode given. Make sure you go through the usage/help${end}\n\n"
+        printf "\n[${red}!${end}] ${yellow}Khong co che do nao duoc chon.  Dam bao ban da xem cach dung${end}\n\n"
         usage
         exit 127
     fi
